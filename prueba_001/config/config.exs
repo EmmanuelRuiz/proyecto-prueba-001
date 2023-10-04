@@ -7,18 +7,19 @@
 # General application configuration
 import Config
 
-config :prueba_001,
-  ecto_repos: [Prueba001.Repo]
+config :prueba__001,
+  ecto_repos: [Prueba001.Repo],
+  generators: [binary_id: true]
 
 # Configures the endpoint
-config :prueba_001, Prueba001Web.Endpoint,
+config :prueba__001, Prueba001Web.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    formats: [html: Prueba001Web.ErrorHTML, json: Prueba001Web.ErrorJSON],
+    formats: [json: Prueba001Web.ErrorJSON],
     layout: false
   ],
   pubsub_server: Prueba001.PubSub,
-  live_view: [signing_salt: "zsqnzAy7"]
+  live_view: [signing_salt: "SU/mqIBE"]
 
 # Configures the mailer
 #
@@ -27,29 +28,7 @@ config :prueba_001, Prueba001Web.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :prueba_001, Prueba001.Mailer, adapter: Swoosh.Adapters.Local
-
-# Configure esbuild (the version is required)
-config :esbuild,
-  version: "0.17.11",
-  default: [
-    args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-    cd: Path.expand("../assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
-  ]
-
-# Configure tailwind (the version is required)
-config :tailwind,
-  version: "3.3.2",
-  default: [
-    args: ~w(
-      --config=tailwind.config.js
-      --input=css/app.css
-      --output=../priv/static/assets/app.css
-    ),
-    cd: Path.expand("../assets", __DIR__)
-  ]
+config :prueba__001, Prueba001.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configures Elixir's Logger
 config :logger, :console,

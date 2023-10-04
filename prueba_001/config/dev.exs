@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :prueba_001, Prueba001.Repo,
+config :prueba__001, Prueba001.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "prueba_001_dev",
+  database: "prueba__001_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,18 +16,15 @@ config :prueba_001, Prueba001.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :prueba_001, Prueba001Web.Endpoint,
+config :prueba__001, Prueba001Web.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "lNDkOu3ksK5L+kI953AJgA+sCbcZI6AxYkDGeon6QvbTILdAwqW5/H9cXxh8hbFv",
-  watchers: [
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
-  ]
+  secret_key_base: "Pq6eJQ8n3eSFsWNhNHtkgrqhYhAmBgoZfvvYUMGJSZJecSK9vVG/nRSpl88MWPEK",
+  watchers: []
 
 # ## SSL Support
 #
@@ -52,18 +49,8 @@ config :prueba_001, Prueba001Web.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Watch static and templates for browser reloading.
-config :prueba_001, Prueba001Web.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/prueba_001_web/(controllers|live|components)/.*(ex|heex)$"
-    ]
-  ]
-
 # Enable dev routes for dashboard and mailbox
-config :prueba_001, dev_routes: true
+config :prueba__001, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
