@@ -1,3 +1,5 @@
+# Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos,elixir,phoenix
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos,elixir,phoenix
 
 ### Elixir ###
 /_build
@@ -61,6 +63,30 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+### Phoenix ###
+# gitignore template for Phoenix projects
+# website: http://www.phoenixframework.org/
+#
+# Recommended template: Elixir.gitignore
+
+# Temporary files
+/tmp
+
+# Static artifacts
+/node_modules
+/assets/node_modules
+
+# Since we are building assets from web/static,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/priv/static/
+
+# Installer-related files
+/installer/_build
+/installer/tmp
+/installer/doc
+/installer/deps
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -87,4 +113,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,windows,macos,elixir
+# End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,elixir,phoenix
