@@ -15,7 +15,7 @@ defmodule Prueba001Web.TaskController do
     with {:ok, %Task{} = task} <- Tasks.create_task(task_params) do
       conn
       |> put_status(:created)
-      |> put_resp_header("location", ~p"/api/tasks/#{task}")
+      #|> put_resp_header("location", ~p"/api/tasks/#{task}")
       |> render(:show, task: task)
     end
   end

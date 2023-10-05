@@ -18,6 +18,6 @@ defmodule Prueba001.Tasks.Task do
   def changeset(task, attrs) do
     task
     |> cast(attrs, [:name, :description, :started_at, :end_at, :is_priority])
-    |> validate_required([:name, :description, :started_at, :end_at, :is_priority])
+    |> validate_required([:name])
   end
 end
